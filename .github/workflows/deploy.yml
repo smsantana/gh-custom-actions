@@ -12,6 +12,8 @@ jobs:
       - name: Cache e Dependencies
         id: cache-deps
         uses: ./.github/actions/cached-deps
+        with:
+          caching: 'false'
       - name: Using cache?
         run: echo "Cache used ? ${{ steps.cache-deps.outputs.used-cache }}"
       - name: Lint code
